@@ -55,8 +55,11 @@ body{
 
 .part-2{
     display: flex;
+    align-items: center;
+    justify-content: center;
     height: 970px;
     background-color: rgb(8, 33, 58);
+    gap: 500px;
 }
 
 .ex{
