@@ -27,7 +27,7 @@ body{
 
 @media(min-width:768px){ /*côté responsive*/
     .wrapper{
-        width: 29em;
+        width: 25em;
        
     }
 }
