@@ -95,28 +95,22 @@ body{
 @media only screen and  (max-width : 600px) {
 
     .part-1{
-        height: 870px;
+        height: 550px;
     }
 
-    .part-1 img{
-        display: block;
-        width: 200px;
+    .part-2 {
+        flex-direction: column
     }
 
     .part-2 img{
-        display: none
-    };
-    
+        width: 350px;
+    }
 }
 
 @media only screen and  (max-width : 600px) {
 
     .part-2 p{
         font-size: 15px;
-    }
-    
-    .part-2{
-        height: 770px;
     }
 
 }
