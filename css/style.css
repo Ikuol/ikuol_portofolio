@@ -17,6 +17,11 @@ body{
     flex-direction: column;
     background-color: #123;
     font-family: Arial, Helvetica, sans-serif;
+    gap: 50px;
+}
+
+.part-1 img{
+    display: none;
 }
 
 .title{
@@ -27,7 +32,7 @@ body{
 }
 
 .description{
-    text-align: justify;
+    text-align: center;
     max-width: 600px;
     color: #fff;
     font-size: 20px;
@@ -59,7 +64,6 @@ body{
     align-items: center;
     justify-content: center;
     height: 970px;
-    width: 100%;
     background-color: rgb(8, 33, 58);
     gap: 100px;
 }
@@ -78,12 +82,6 @@ body{
    
 }
 
-.ex{
-    display: flex;
-    flex-direction: row;
-    justify-content:center;
-}
-
 .img-1{
     height: 700px;
     width: 500px;
@@ -97,8 +95,17 @@ body{
 @media only screen and  (max-width : 600px) {
 
     .part-1{
-        height: 500px;
+        height: 870px;
     }
+
+    .part-1 img{
+        display: block;
+        width: 200px;
+    }
+
+    .part-2 img{
+        display: none
+    };
     
 }
 
@@ -109,11 +116,7 @@ body{
     }
     
     .part-2{
-        flex-direction: column;
-        width: 115%;
+        height: 770px;
     }
 
-    .part-2 img{
-        width: 350px;
-    }
 }
