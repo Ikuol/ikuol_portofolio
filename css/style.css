@@ -59,6 +59,7 @@ body{
     align-items: center;
     justify-content: center;
     height: 970px;
+    width: 100%;
     background-color: rgb(8, 33, 58);
     gap: 100px;
 }
@@ -109,9 +110,10 @@ body{
     
     .part-2{
         flex-direction: column;
+        width: 115%;
     }
 
     .part-2 img{
-        width: 400px;
+        width: 350px;
     }
 }
