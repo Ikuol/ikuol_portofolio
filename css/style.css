@@ -88,22 +88,12 @@ body{
     width: 500px;
 }
 
-#myProgress {
-    width: 100%;
-    background-color: grey;
-  }
-  
-  #myBar {
-    width: 1%;
-    height: 30px;
-    background-color: green;
-  }
+.img-2{
+    width: 500px;
+}
 
-@media only screen and  (max-width : 1200px) {
 
-    img{
-        display: none;
-    }
+@media only screen and  (max-width : 600px) {
 
     .part-1{
         height: 500px;
@@ -111,9 +101,17 @@ body{
     
 }
 
-/*@media only screen and  (max-width : 600px) {
+@media only screen and  (max-width : 600px) {
 
     .part-2 p{
         font-size: 15px;
-    } 
-}*/
+    }
+    
+    .part-2{
+        flex-direction: column;
+    }
+
+    .part-2 img{
+        width: 400px;
+    }
+}
