@@ -75,11 +75,12 @@ body{
 
 .part-3{
     display: flex;
+    height: 870px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     background-color: #123;
-   
+    gap: 200px;
 }
 
 .img-1{
@@ -89,6 +90,11 @@ body{
 
 .img-2{
     width: 500px;
+}
+
+.img-3{
+    width: 300px;
+    height: 500px;
 }
 
 
@@ -111,6 +117,12 @@ body{
 
     .part-2 p{
         font-size: 15px;
+    }
+
+    .part-3{
+        flex-direction: column;
+        gap: 75px;
+        height: 600px;
     }
 
 }
