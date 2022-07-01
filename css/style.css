@@ -1,10 +1,22 @@
 *{
     margin: 0;
     padding: 0;
+    align-items: center;
 }
 
 body{
     background-color: #8f5909ab;
+}
+
+.logo-me{
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+    background-image: url("../images/juice.png");
+    background-size: 45px 65px;
+    background-repeat: no-repeat;
+    background-position: 3px 2px;
+    margin:  0 auto;
 }
 
 .part-1{
@@ -18,10 +30,6 @@ body{
     background-color: #123;
     font-family: Arial, Helvetica, sans-serif;
     gap: 50px;
-}
-
-.part-1 img{
-    display: none;
 }
 
 .title{
@@ -65,7 +73,7 @@ body{
     justify-content: center;
     height: 970px;
     background-color: rgb(8, 33, 58);
-    gap: 100px;
+    gap: 120px;
 }
 
 .part-2 p{
@@ -75,12 +83,16 @@ body{
 
 .part-3{
     display: flex;
-    height: 870px;
+    height: 700px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     background-color: #123;
-    gap: 200px;
+    gap: 120px;
+}
+
+.part-3 h1{
+    font-size: 35px;
 }
 
 .img-1{
@@ -95,10 +107,10 @@ body{
 .img-3{
     width: 300px;
     height: 500px;
+    /*border: 5px solid rgba(255, 194, 80, 0.76);*/
 }
 
-
-@media only screen and  (max-width : 600px) {
+@media only screen and  (max-width : 1000px) {
 
     .part-1{
         height: 550px;
@@ -113,7 +125,7 @@ body{
     }
 }
 
-@media only screen and  (max-width : 600px) {
+@media only screen and  (max-width : 1000px) {
 
     .part-2 p{
         font-size: 15px;
@@ -121,8 +133,34 @@ body{
 
     .part-3{
         flex-direction: column;
-        gap: 75px;
+        gap: 55px;
         height: 600px;
+    }
+
+}
+
+
+@media only screen and  (max-width : 1300px) {
+
+    .part-3 img{
+        display: none;
+    }
+
+}
+
+@media only screen and  (max-width : 600px) {
+
+    .logo-me{
+        display: none;
+    }
+    
+    .progress{
+        width: 300px;
+    }
+
+    .part-3 h1{
+        font-size:28px;
+        color: blue;
     }
 
 }
