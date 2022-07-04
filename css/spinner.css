@@ -1,0 +1,28 @@
+body{
+    background-color: #123;
+}
+
+.loaderelement{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner{
+    width: 60px;
+    height: 60px;
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid rgba(255, 194, 80, 0.76);
+    animation: spin 2s;
+}
+
+@keyframes spin{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
