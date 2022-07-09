@@ -13,3 +13,5 @@ window.addEventListener("load", function(){
   function loader(){
     loaderel.style.display="none";
   }
+
+  
