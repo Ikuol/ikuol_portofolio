@@ -7,7 +7,7 @@ window.addEventListener("load", function(){
 });
 
   function fadeOut(){
-    window.location.replace("../ikuol_portofolio/contact.html");
+    window.location.replace("../ikuol_portofolio/contact.ejs");
   }
 
   function loader(){
