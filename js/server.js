@@ -24,20 +24,18 @@ app.use(express.static('../'));
     app.set('views', path.join(__dirname, '../'));
     app.set('view engine', 'ejs');
 
-        
-
 
         app.get('/', (req, res)=>{
             res.status(200).render('index');
         });
 
-            app.get('/spinner', (req, res)=>{
-                res.status(200).render('spinner');
-            });
+        app.get('/spinner', (req, res)=>{
+            res.status(200).render('spinner');
+        });
 
-                 app.get('/contact', (req, res)=>{
-                    res.status(200).render('contact');
-                });
+        app.get('/contact', (req, res)=>{
+            res.status(200).render('contact');
+        });
 
         app.listen(3001,()=>{
             console.log('listening on port:3001');
@@ -48,8 +46,9 @@ app.use(express.static('../'));
 app.post("/save",(req,res)=>{
 
     let email=req.body.email;
-    let name=req.body.name;
-    let message=req.body.message;
+        let name=req.body.name;
+            let message=req.body.message;
+        
     //insertion d'une donnée
         req.getConnection((err,connection)=>{
             if(err){
@@ -57,17 +56,18 @@ app.post("/save",(req,res)=>{
             } else{
                 connection.query(
                     'INSERT INTO infos(name,email,message) VALUES(?,?,?)', [name,email,message],
-                    (err,result)=>{
-                        if(err){
-                            console.log(err);
+                (err,result)=>{
+                     if(err){
+                        console.log(err);
                         }
-                    }
-                );
-            }
+                     else{
+                        res.status(300).redirect('/');
+                             }
+                        }
+                     );
+                 }
+             });
         });
- 
-    
-});
 
 
 
