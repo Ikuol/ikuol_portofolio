@@ -2,6 +2,7 @@ const mysql=require('mysql');
 const express=require('express');
 const path=require('path');
 const myconnection=require('express-myconnection');
+/*const nodemailer=require('nodemailer');*/
 
 
 const optionsBD={
@@ -37,8 +38,8 @@ app.use(express.static('../'));
             res.status(200).render('contact');
         });
 
-        app.listen(3001,()=>{
-            console.log('listening on port:3001');
+        app.listen(3000,()=>{
+            console.log('listening on port:3000');
         });
 
     
@@ -69,6 +70,33 @@ app.post("/save",(req,res)=>{
              });
         });
 
+
+ //Envoyer un mail avec NodeMailer       
+
+/*const transporter=nodemailer.createTransport({
+    service:'gmail',
+    auth:{
+        user:'ikuolsogbohossou@gmail.com',
+        pass:'nbyzxfgixkiwiqsz'
+    }
+});
+
+const mailOptions={
+    from:'ikuolsogbohossou@gmail.com',
+    to:'damienssopolo@gmail.com',
+    subject:'Sending Email using Node.js',
+    text:'Im trying!'
+};
+
+transporter.sendMail(mailOptions,function(error,info){
+    if(error){
+        console.log(error);
+    }
+    else{
+        console.log('Email sent:+info.response');
+    }
+});
+*/
 
 
     
