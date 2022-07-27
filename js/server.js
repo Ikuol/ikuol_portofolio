@@ -1,8 +1,9 @@
+var PORT= process.env.PORT || 5000;
 const mysql=require('mysql');
 const express=require('express');
 const path=require('path');
 const myconnection=require('express-myconnection');
-/*const nodemailer=require('nodemailer');*/
+const nodemailer=require('nodemailer');
 
 
 const optionsBD={
@@ -38,8 +39,8 @@ app.use(express.static('../'));
             res.status(200).render('contact');
         });
 
-        app.listen(3000,()=>{
-            console.log('listening on port:3000');
+        app.listen(PORT,()=>{
+            console.log('listening on port:5000');
         });
 
     
@@ -49,6 +50,34 @@ app.post("/save",(req,res)=>{
     let email=req.body.email;
         let name=req.body.name;
             let message=req.body.message;
+
+    //Envoyer un mail avec NodeMailer       
+    
+            const transporter=nodemailer.createTransport({
+                service:'gmail',
+                auth:{
+                    user:'ikuolsogbohossou@gmail.com',
+                    pass:'nbyzxfgixkiwiqsz'
+                }
+            });
+            
+            const mailOptions={
+                from:'ikuolsogbohossou@gmail.com',
+                to:'damienssopolo@gmail.com',
+                subject:'Sending Email using Node.js',
+                text:`Name:${name} 
+                         Email:${email}  
+                            Message:${message} `
+            };
+            
+            transporter.sendMail(mailOptions,function(error,info){
+                if(error){
+                    console.log(error);
+                }
+                else{
+                    console.log('Email sent:+info.response');
+                }
+            });
         
     //insertion d'une donnée
         req.getConnection((err,connection)=>{
@@ -71,32 +100,10 @@ app.post("/save",(req,res)=>{
         });
 
 
- //Envoyer un mail avec NodeMailer       
+ 
 
-/*const transporter=nodemailer.createTransport({
-    service:'gmail',
-    auth:{
-        user:'ikuolsogbohossou@gmail.com',
-        pass:'nbyzxfgixkiwiqsz'
-    }
-});
 
-const mailOptions={
-    from:'ikuolsogbohossou@gmail.com',
-    to:'damienssopolo@gmail.com',
-    subject:'Sending Email using Node.js',
-    text:'Im trying!'
-};
 
-transporter.sendMail(mailOptions,function(error,info){
-    if(error){
-        console.log(error);
-    }
-    else{
-        console.log('Email sent:+info.response');
-    }
-});
-*/
 
 
     
